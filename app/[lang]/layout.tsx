@@ -8,7 +8,13 @@ const inter = Inter({
   subsets: ['latin'],
 });
 
-export default function Layout({ params, children }: { params: { lang: string }, children: ReactNode }) {
+export default async function Layout(props: { params: Promise<{ lang: string }>, children: ReactNode }) {
+  const params = await props.params;
+
+  const {
+    children
+  } = props;
+
   return (
     <html lang="en" className={inter.className} suppressHydrationWarning>
       <body className="flex flex-col min-h-screen">
