@@ -18,4 +18,5 @@ export const baseOptions: BaseLayoutProps = {
       active: 'nested-url',
     },
   ],
+    i18n: true
 };
